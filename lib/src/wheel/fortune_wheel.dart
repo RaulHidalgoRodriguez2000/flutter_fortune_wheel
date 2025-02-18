@@ -192,14 +192,14 @@ class FortuneWheel extends HookWidget implements FortuneWidget {
 // Initializes an AnimationController with a duration of 300 milliseconds.
 // This controller manages the timing of the animation.
 
-    final arrowAnimation = Tween<double>(begin: 0, end: -20).animate(
-      CurvedAnimation(
-        parent: arrowController,
-        curve: Curves.easeOut, // Curve for the forward animation (ease out)
-        reverseCurve:
-            Curves.easeIn, // Curve for the reverse animation (ease in)
-      ),
-    );
+    // final arrowAnimation = Tween<double>(begin: 0, end: -20).animate(
+    //   CurvedAnimation(
+    //     parent: arrowController,
+    //     curve: Curves.easeOut, // Curve for the forward animation (ease out)
+    //     reverseCurve:
+    //         Curves.easeIn, // Curve for the reverse animation (ease in)
+    //   ),
+    // );
 // Creates an Animation that interpolates from 0 to -20 using a Tween.
 // The animation uses a CurvedAnimation to apply easing curves for smoother motion.
 
@@ -322,16 +322,7 @@ class FortuneWheel extends HookWidget implements FortuneWidget {
               IgnorePointer(
                 child: Container(
                   alignment: it.alignment,
-                  child: AnimatedBuilder(
-                    animation: arrowAnimation,
-                    builder: (context, child) {
-                      return Transform.translate(
-                        offset: Offset(0, arrowAnimation.value),
-                        child: child,
-                      );
-                    },
-                    child: it.child,
-                  ),
+                  child: it.child,
                 ),
               ),
           ],
