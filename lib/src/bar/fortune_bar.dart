@@ -104,7 +104,6 @@ class FortuneBar extends HookWidget implements FortuneWidget {
     final animationCtrl = useAnimationController(duration: duration);
     final animation = CurvedAnimation(parent: animationCtrl, curve: curve);
 
-    // TODO: refactor: implement shared fortune animation hook
     Future<void> animate() async {
       if (animationCtrl.isAnimating) {
         return;

@@ -201,10 +201,12 @@ class FortuneWheel extends HookWidget implements FortuneWidget {
     //   ),
     // );
 // Creates an Animation that interpolates from 0 to -20 using a Tween.
-// The animation uses a CurvedAnimation to apply easing curves for smoother motion.
+// The animation uses a CurvedAnimation to apply easing curves for 
+//smoother motion.
 
     useEffect(() {
-      // Add a listener to the arrowController to monitor animation status changes
+      // Add a listener to the arrowController to monitor 
+      //animation status changes
       arrowController.addStatusListener((status) {
         // If the animation has completed (reached the end)
         if (status == AnimationStatus.completed) {

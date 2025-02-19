@@ -21,7 +21,7 @@ class FortuneBarPage extends HookWidget {
 
     void handleRoll() {
       selected.add(
-        roll(Constants.fortuneValues.length),
+        roll(fortuneValues.length),
       );
     }
 
@@ -31,7 +31,7 @@ class FortuneBarPage extends HookWidget {
           SizedBox(height: 8),
           RollButtonWithPreview(
             selected: selectedIndex,
-            items: Constants.fortuneValues,
+            items: fortuneValues,
             onPressed: isAnimating.value ? null : handleRoll,
           ),
           SizedBox(height: 8),
@@ -40,7 +40,7 @@ class FortuneBarPage extends HookWidget {
               child: FortuneBar(
                 selected: selected.stream,
                 items: [
-                  for (var it in Constants.fortuneValues)
+                  for (var it in fortuneValues)
                     FortuneItem(child: Text(it), onTap: () => print(it))
                 ],
                 onFling: handleRoll,
